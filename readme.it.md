@@ -2,8 +2,7 @@
 
 Sistema di prenotazione sale riunioni professionale sviluppato con **TypeScript 5.8.3** e **Tailwind CSS 4.1.11**.
 
-📄 Versione in inglese:
-- 🇬🇧 [English](README.md)
+📄 Versione in inglese: 🇬🇧 [English](README.md)
 
 ![UI](assets/screenshot-1.png)
 

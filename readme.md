@@ -2,8 +2,7 @@
 
 Professional meeting room booking system developed with **TypeScript 5.8.3** and **Tailwind CSS 4.1.11**.
 
-📄 Italian version:
-- 🇮🇹 [Italiano](README.it.md)
+📄 Italian version: 🇮🇹 [Italiano](README.it.md)
 
 ![UI](assets/screenshot-1.png)
 
