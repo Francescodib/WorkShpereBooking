@@ -3,41 +3,173 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prenotazione Sale</title>
+  <title>Prenotazione Sale - WorkSphere</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="dist/output.css">
-</head>
-<body class="bg-gray-50 min-h-screen p-4 md:p-8">
-  <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-md overflow-hidden p-6">
-    <h1 class="text-2xl font-bold text-gray-800 mb-6">Prenotazione Sale</h1>
+  <style>
+    /* Custom animations for better UX */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
     
-    <form id="bookingForm" class="space-y-4">
-      <div>
-        <label for="room" class="block text-sm font-medium text-gray-700 mb-1">Sala</label>
-        <select id="room" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+    @keyframes slideUp {
+      from { 
+        transform: translateY(10px); 
+        opacity: 0; 
+      }
+      to { 
+        transform: translateY(0); 
+        opacity: 1; 
+      }
+    }
+    
+    .animate-fade-in {
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    
+    .animate-slide-up {
+      animation: slideUp 0.3s ease-out;
+    }
+    
+    /* Loading state styles */
+    .loading {
+      position: relative;
+      color: transparent;
+    }
+    
+    .loading::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 16px;
+      height: 16px;
+      margin: -8px 0 0 -8px;
+      border: 2px solid #ffffff;
+      border-radius: 50%;
+      border-top-color: transparent;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen p-4 md:p-8 font-sans">
+  <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden p-6 animate-fade-in">
+    <!-- Header -->
+    <header class="text-center mb-8">
+      <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4">
+        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+        </svg>
+      </div>
+      <h1 class="text-3xl font-bold text-gray-800 mb-2">Prenotazione Sale</h1>
+      <p class="text-gray-600">WorkSphere Solutions - Sistema di prenotazione sale riunioni</p>
+    </header>
+
+    <!-- Booking Form -->
+    <form id="bookingForm" class="space-y-6" novalidate>
+      <!-- Room Selection -->
+      <div class="space-y-2">
+        <label for="room" class="block text-sm font-semibold text-gray-700">
+          Sala riunioni
+          <span class="text-red-500">*</span>
+        </label>
+        <select 
+          id="room" 
+          name="room"
+          class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
+          required
+          aria-describedby="room-help"
+        >
           <option value="">Seleziona una sala</option>
         </select>
+        <p id="room-help" class="text-xs text-gray-500">Scegli la sala più adatta alle tue esigenze</p>
       </div>
       
-      <div>
-        <label for="date" class="block text-sm font-medium text-gray-700 mb-1">Data</label>
-        <input type="date" id="date" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+      <!-- Date Selection -->
+      <div class="space-y-2">
+        <label for="date" class="block text-sm font-semibold text-gray-700">
+          Data prenotazione
+          <span class="text-red-500">*</span>
+        </label>
+        <input 
+          type="date" 
+          id="date" 
+          name="date"
+          class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
+          required
+          aria-describedby="date-help"
+        >
+        <p id="date-help" class="text-xs text-gray-500">Seleziona la data desiderata per la prenotazione</p>
       </div>
       
-      <div>
-        <label for="time" class="block text-sm font-medium text-gray-700 mb-1">Orario</label>
-        <select id="time" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+      <!-- Time Selection -->
+      <div class="space-y-2">
+        <label for="time" class="block text-sm font-semibold text-gray-700">
+          Orario
+          <span class="text-red-500">*</span>
+        </label>
+        <select 
+          id="time" 
+          name="time"
+          class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 disabled:bg-gray-100 disabled:cursor-not-allowed"
+          required
+          aria-describedby="time-help"
+        >
           <option value="">Seleziona un orario</option>
         </select>
+        <p id="time-help" class="text-xs text-gray-500">Gli orari occupati sono contrassegnati come non disponibili</p>
       </div>
       
-      <button type="submit" id="bookBtn" class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
-        Prenota
+      <!-- Submit Button -->
+      <button 
+        type="submit" 
+        id="submitBtn"
+        class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-3 px-6 rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-[1.02] active:scale-[0.98]"
+        aria-describedby="submit-help"
+      >
+        <span class="flex items-center justify-center">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3a2 2 0 012-2h4a2 2 0 012 2v4m-6 0V3m6 4V3m-6 0h6m-6 0a2 2 0 00-2 2v6a2 2 0 002 2h6a2 2 0 002-2V9a2 2 0 00-2-2m-6 0h6"/>
+          </svg>
+          Prenota sala
+        </span>
       </button>
+      <p id="submit-help" class="text-xs text-gray-500 text-center">La prenotazione sarà confermata immediatamente</p>
     </form>
     
-    <div id="message" class="hidden mt-6 p-4 rounded-lg text-center text-sm font-medium"></div>
+    <!-- Message Display -->
+    <div id="message" class="hidden" role="alert" aria-live="polite"></div>
+    
+    <!-- Footer -->
+    <footer class="mt-8 pt-6 border-t border-gray-200 text-center">
+      <p class="text-sm text-gray-500">
+        © 2025 WorkSphere Solutions - Sistema di prenotazione sale
+      </p>
+      <div class="mt-2 flex justify-center space-x-4 text-xs text-gray-400">
+        <span>Sviluppato con TypeScript</span>
+        <span>•</span>
+        <span>Styled with Tailwind CSS</span>
+      </div>
+    </footer>
   </div>
   
+  <!-- Loading Overlay (for future enhancements) -->
+  <div id="loadingOverlay" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div class="bg-white p-6 rounded-lg shadow-lg">
+      <div class="flex items-center space-x-3">
+        <div class="animate-spin rounded-full h-6 w-6 border-b-2 border-blue-600"></div>
+        <span class="text-gray-700">Caricamento in corso...</span>
+      </div>
+    </div>
+  </div>
+
   <script type="module" src="dist/app.js"></script>
 </body>
 </html>

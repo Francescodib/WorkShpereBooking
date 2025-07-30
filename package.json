@@ -1,20 +1,44 @@
 {
   "name": "worksphere-booking",
   "version": "1.0.0",
-  "description": "Booking management for coworking spaces",
+  "description": "Enhanced booking management system for coworking spaces",
   "main": "dist/app.js",
+  "type": "module",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && npm run build:css",
+    "build:ts": "tsc",
+    "build:css": "postcss src/input.css -o dist/output.css --watch",
     "watch": "tsc --watch",
-    "start": "tsc",
-    "build:css": "postcss src/input.css -o dist/output.css"
+    "watch:css": "postcss src/input.css -o dist/output.css --watch",
+    "dev": "concurrently \"npm run watch\" \"npm run watch:css\"",
+    "start": "npm run build && serve -s .",
+    "clean": "rimraf dist",
+    "lint": "tsc --noEmit",
+    "test": "echo \"Tests not implemented yet\" && exit 0"
   },
+  "keywords": [
+    "typescript",
+    "booking",
+    "coworking",
+    "room-management",
+    "tailwindcss"
+  ],
+  "author": "WorkSphere Solutions",
+  "license": "MIT",
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.11",
+    "@types/node": "^20.0.0",
     "autoprefixer": "^10.4.21",
+    "concurrently": "^8.2.2",
     "postcss": "^8.5.6",
     "postcss-cli": "^11.0.0",
+    "rimraf": "^5.0.5",
+    "serve": "^14.2.1",
     "tailwindcss": "^4.1.11",
     "typescript": "^5.8.3"
-  }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
 }
