@@ -1,3 +1,7 @@
+/**
+ * Booking interface
+ * Represents a booking for a meeting room.
+ */
 export interface Booking {
     roomId: number;
     date: string; // formato YYYY-MM-DD
