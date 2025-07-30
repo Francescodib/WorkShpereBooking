@@ -5,33 +5,28 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ES2020",
     "moduleResolution": "node",
+    "allowImportingTsExtensions": false,
     
     /* Modules */
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
-    "isolatedModules": true,
     
     /* Type Checking */
     "strict": true,
-    "noUnusedLocals": true,
     "noUnusedParameters": true,
     "exactOptionalPropertyTypes": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedIndexedAccess": false,
     "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": false,
     
     /* Emit */
     "declaration": true,
-    "declarationMap": true,
     "sourceMap": true,
     "outDir": "./dist",
     "rootDir": "./src",
     "removeComments": false,
     "noEmitOnError": true,
-    "preserveConstEnums": true,
     
     /* Interop Constraints */
     "forceConsistentCasingInFileNames": true,
@@ -49,6 +44,5 @@
     "dist",
     "**/*.test.ts",
     "**/*.spec.ts"
-  ],
-  "compileOnSave": true
+  ]
 }

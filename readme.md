@@ -68,15 +68,35 @@ npm start
 
 ## Configurazione Tailwind CSS 4
 
-Il progetto utilizza Tailwind CSS 4 come plugin PostCSS:
+Il progetto utilizza Tailwind CSS 4 come plugin PostCSS con ES modules:
 
 ```javascript
 // postcss.config.js
-module.exports = {
+export default {
   plugins: {
-    tailwindcss: {},
+    '@tailwindcss/postcss': {
+      config: './tailwind.config.js'
+    },
     autoprefixer: {},
   },
+}
+```
+
+### Input CSS per Tailwind 4
+```css
+// src/input.css
+@import "tailwindcss";
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700;
+  }
 }
 ```
 
@@ -168,10 +188,12 @@ const validateBooking = (booking: Booking): BookingValidationResult => {
 
 ## Miglioramenti Implementati
 
-### 1. Configurazione Tailwind 4
-- Configurazione corretta come plugin PostCSS
+### 1. Configurazione Tailwind 4 ✅
+- Configurazione corretta come plugin PostCSS con ES modules
+- Sintassi aggiornata con `@import "tailwindcss"`
 - File `tailwind.config.js` con personalizzazioni
 - Animazioni custom per UX migliore
+- Risolti problemi MIME type e 404 errors
 
 ### 2. Type Safety
 - Interface complete per tutti gli oggetti
@@ -232,6 +254,41 @@ const validateBooking = (booking: Booking): BookingValidationResult => {
    - Verifica `tailwind.config.js`
    - Controlla `content` paths
    - Rigenera CSS con `npm run build:css`
+
+4. **Errori ES Module ("module is not defined")**
+   - Assicurati che tutti i config files usino `export default` invece di `module.exports`
+   - Verifica che `"type": "module"` sia presente in `package.json`
+
+5. **Errori 404 per moduli nel browser**
+   - Aggiungi estensioni `.js` agli import TypeScript
+   - Usa `npm start` invece di Live Server per servire i file
+
+6. **MIME type errors per CSS**
+   - Usa `npm start` che configura correttamente i MIME types
+   - Evita Live Server per progetti con strutture di cartelle complesse
+
+### Configurazione ES Modules
+
+Questo progetto usa ES modules. Assicurati che:
+
+```json
+// package.json
+{
+  "type": "module"
+}
+```
+
+```javascript
+// Tutti i config files devono usare:
+export default {
+  // configurazione
+}
+```
+
+```typescript
+// Import con estensioni .js per compatibilità browser
+import { something } from './path/to/module.js';
+```
 
 ## Roadmap Future
 

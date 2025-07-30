@@ -2,7 +2,7 @@
  * Enhanced Booking Service Module
  * Provides comprehensive booking management with improved error handling and validation
  */
-import { Booking, BookingValidationResult } from '../types';
+import { Booking, BookingValidationResult } from '../types/index.js';
 
 const BOOKINGS_KEY = 'roomBookings';
 const STORAGE_VERSION = '1.0';

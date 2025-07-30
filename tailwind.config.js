@@ -1,8 +1,9 @@
-module.exports = {
+export default {
     content: [
       "./src/**/*.{html,js,ts,jsx,tsx}",
       "./index.html"
     ],
+    darkMode: 'class',
     theme: {
       extend: {
         fontFamily: {
@@ -24,5 +25,5 @@ module.exports = {
         }
       },
     },
-    plugins: [],
-  }
+    plugins: []
+}
