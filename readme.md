@@ -2,7 +2,7 @@
 
 Sistema di prenotazione sale riunioni professionale sviluppato con **TypeScript 5.8.3** e **Tailwind CSS 4.1.11**.
 
-## 🎯 Caratteristiche Principali
+##  Caratteristiche Principali
 
 ### Core Features
 - **Sistema di Prenotazione Completo**: Gestione sale, date e orari con validazione real-time
@@ -18,7 +18,7 @@ Sistema di prenotazione sale riunioni professionale sviluppato con **TypeScript 
 - **Error Handling Avanzato**: Sistema di errori classificati con logging strutturato
 - **Accessibilità Completa**: ARIA labels, navigazione keyboard, contrast ratio ottimali
 
-## 🏗️ Architettura del Sistema
+##  Architettura del Sistema
 
 ### Stack Tecnologico
 ```
@@ -51,7 +51,7 @@ worksphere-booking/
 └── postcss.config.js           # Configurazione PostCSS
 ```
 
-## 🚀 Installazione e Setup
+##  Installazione e Setup
 
 ### Prerequisiti
 - **Node.js** >= 18.0.0
@@ -94,7 +94,7 @@ mkdir -p src/{types,services} dist
 # tsconfig.json, tailwind.config.js, postcss.config.js
 ```
 
-## 🛠️ Comandi di Sviluppo
+##  Comandi di Sviluppo
 
 ### Build e Compilazione
 ```bash
@@ -367,7 +367,7 @@ module.exports = {
 ">
 ```
 
-## 🔧 Funzionalità Avanzate
+## Funzionalità Avanzate
 
 ### Error Handling Sistemico
 ```typescript
@@ -423,7 +423,7 @@ const performanceLogger = {
 };
 ```
 
-## 🎨 UI/UX Features
+## UI/UX Features
 
 ### Sistema Messaggi Dinamico
 - Messaggi success/error/warning/info con colori differenziati
@@ -441,7 +441,7 @@ const performanceLogger = {
 - Color contrast ratio > 4.5:1 per WCAG compliance
 - Screen reader friendly error announcements
 
-## 📊 Browser Support & Performance
+## Browser Support & Performance
 
 ### Browser Compatibility
 - **Chrome/Edge** >= 88 (ES2020 support)
@@ -455,7 +455,7 @@ const performanceLogger = {
 - **Bundle size** < 50KB (CSS + JS minified)
 - **Memory usage** < 10MB runtime
 
-## 🧪 Testing Strategy
+## Testing Strategy
 
 ### Approccio Testing (Teoria)
 ```typescript
@@ -483,7 +483,7 @@ describe('Booking Flow', () => {
 });
 ```
 
-## 🔐 Security Considerations
+## Security Considerations
 
 ### Input Validation
 - Sanitizzazione input utente per prevenire XSS
@@ -495,7 +495,7 @@ describe('Booking Flow', () => {
 - No sensitive data storage in client
 - Error messages che non espongono internals
 
-## 🚀 Deployment & Production
+## Deployment & Production
 
 ### Build per Produzione
 ```bash
@@ -517,7 +517,7 @@ npm start
 - Source maps per debugging
 - Minification via PostCSS
 
-## 📈 Roadmap Future
+## Roadmap Future
 
 ### Features Pianificate
 - [ ] **Testing Suite**: Jest + Testing Library + Playwright E2E
@@ -534,7 +534,7 @@ npm start
 - [ ] **Advanced Caching**: Service worker caching strategies
 - [ ] **Error Reporting**: Sentry integration per production monitoring
 
-## 🤝 Contribuzione
+## Contribuzione
 
 ### Setup Sviluppo
 1. Fork del repository
@@ -557,7 +557,7 @@ npm start
 4. Update documentation se necessario
 5. Squash commits prima del merge
 
-## 📄 License & Credits
+## License & Credits
 
 **License**: MIT License - vedi file LICENSE per dettagli
 
