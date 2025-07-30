@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WorkSphere - Prenotazione Sale</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="gradient-bg">
+  <div class="card">
+    <!-- Header -->
+    <div class="header">
+      <div class="icon-container">
+        <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+        </svg>
+      </div>
+      <h1 class="title">WorkSphere</h1>
+      <p class="subtitle">Prenotazione Sale Riunioni</p>
+    </div>
+
+    <!-- Form -->
+    <form>
+      <div>
+        <label for="room">Sala Riunioni</label>
+        <select id="room" class="form-input">
+          <option value="">Seleziona una sala...</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="date">Data</label>
+        <input type="date" id="date" class="form-input" />
+      </div>
+
+      <div>
+        <label for="time">Fascia Oraria</label>
+        <select id="time" class="form-input">
+          <option value="">Seleziona un orario...</option>
+          <option value="09:00">09:00 - 10:00</option>
+          <option value="10:00">10:00 - 11:00</option>
+          <option value="11:00">11:00 - 12:00</option>
+          <option value="12:00">12:00 - 13:00</option>
+          <option value="14:00">14:00 - 15:00</option>
+          <option value="15:00">15:00 - 16:00</option>
+          <option value="16:00">16:00 - 17:00</option>
+          <option value="17:00">17:00 - 18:00</option>
+        </select>
+      </div>
+
+      <button type="button" id="bookBtn" class="btn-primary">
+        <span class="btn-icon">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+          </svg>
+          Prenota Sala
+        </span>
+      </button>
+    </form>
+
+    <!-- Message -->
+    <div id="message"></div>
+  </div>
+
+  <script src="dist/app.js"></script>
+</body>
+</html>
