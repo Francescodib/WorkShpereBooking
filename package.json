@@ -23,7 +23,7 @@
     "room-management",
     "tailwindcss"
   ],
-  "author": "WorkSphere Solutions",
+  "author": "Francesco di Biase",
   "license": "MIT",
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.11",

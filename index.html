@@ -44,17 +44,16 @@
   </style>
 </head>
 <body class="bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 min-h-screen p-4 md:p-8 font-sans">
-  <div class="max-w-2xl mx-auto bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden p-6 animate-fade-in">
+  <div class="max-w-2xl mx-auto bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden p-6 animate-fade-in border border-gray-200 dark:border-gray-700">
     
     <!-- Header -->
     <header class="text-center mb-8">
-      <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 dark:bg-white/10 rounded-full mb-4">
-        <svg class="w-8 h-8 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-        </svg>
+      <div class="inline-flex items-center justify-center w-50 h-50 bg-blue-100 dark:bg-white/10 rounded-full mb-4">
+        
+        <img src="dist/logo.jpg" alt="WorkSphere Solutions" class="w-full h-full object-contain rounded-full border-3 border-gray-200">
       </div>
-      <h1 class="text-3xl font-bold text-gray-800 dark:text-white mb-2">Prenotazione Sale</h1>
-      <p class="text-gray-600 dark:text-gray-300">WorkSphere Solutions - Sistema di prenotazione sale riunioni</p>
+      <h1 class="text-3xl font-bold text-gray-800 dark:text-white mb-2">WorkSphere Solutions</h1>
+      <p class="text-gray-600 dark:text-gray-300">Sistema di prenotazione sale riunioni</p>
     </header>
 
     <!-- Booking Form -->
@@ -117,10 +116,10 @@
         aria-describedby="submit-help"
       >
         <span class="flex items-center justify-center">
-          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3a2 2 0 012-2h4a2 2 0 012 2v4m-6 0V3m6 4V3m-6 0h6m-6 0a2 2 0 00-2 2v6a2 2 0 002 2h6a2 2 0 002-2V9a2 2 0 00-2-2m-6 0h6"/>
-          </svg>
-          Prenota sala
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-6 h-6 mr-2 align-middle">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 6v.75m0 3v.75m0 3v.75m0 3V18m-9-5.25h5.25M7.5 15h3M3.375 5.25c-.621 0-1.125.504-1.125 1.125v3.026a2.999 2.999 0 0 1 0 5.198v3.026c0 .621.504 1.125 1.125 1.125h17.25c.621 0 1.125-.504 1.125-1.125v-3.026a2.999 2.999 0 0 1 0-5.198V6.375c0-.621-.504-1.125-1.125-1.125H3.375Z" />
+            </svg>
+          <span class="align-middle">Prenota sala</span>
         </span>
       </button>
       <p id="submit-help" class="text-xs text-gray-500 dark:text-gray-400 text-center">La prenotazione sarà confermata immediatamente</p>

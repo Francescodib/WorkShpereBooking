@@ -1,148 +1,148 @@
 # WorkSphere Booking System
 
-Professional meeting room booking system developed with **TypeScript 5.8.3** and **Tailwind CSS 4.1.11**.
+Sistema di prenotazione sale riunioni professionale sviluppato con **TypeScript 5.8.3** e **Tailwind CSS 4.1.11**.
 
-📄 Italian version:
-- 🇮🇹 [Italiano](README.it.md)
+📄 Versione in inglese:
+- 🇬🇧 [English](README.md)
 
 ![UI](assets/screenshot-1.png)
 
-## Main Features
+##  Caratteristiche Principali
 
 ### Core Features
-- **Complete Booking System**: Manage rooms, dates, and times with real-time validation
-- **Conflict Prevention**: Automatic availability check and prevention of double bookings
-- **Data Persistence**: Local storage with versioning and automatic migration
-- **Multi-level Validation**: Client-side and service-side with detailed error messages
-- **Responsive UI**: Mobile-first design with smooth animations and visual feedback
+- **Sistema di Prenotazione Completo**: Gestione sale, date e orari con validazione real-time
+- **Prevenzione Conflitti**: Controllo automatico disponibilità e prevenzione doppie prenotazioni
+- **Persistenza Dati**: Storage locale con versioning e migrazione automatica
+- **Validazione Multi-livello**: Client-side e service-side con messaggi di errore dettagliati
+- **UI Responsiva**: Design mobile-first con animazioni fluide e feedback visivo
 
 ### Advanced Features
-- **TypeScript Strict Mode**: Strict typing for maximum code safety
-- **Modular Architecture**: Clear separation between presentation, application, and service layers
-- **Optimized Performance**: Debouncing, memory management, and efficient updates
-- **Advanced Error Handling**: Classified error system with structured logging
-- **Full Accessibility**: ARIA labels, keyboard navigation, optimal contrast ratio
+- **TypeScript Strict Mode**: Tipizzazione rigorosa per massima sicurezza del codice
+- **Architettura Modulare**: Separazione chiara tra presentation, application e service layer
+- **Performance Ottimizzata**: Debouncing, gestione memoria e aggiornamenti efficienti
+- **Error Handling Avanzato**: Sistema di errori classificati con logging strutturato
+- **Accessibilità Completa**: ARIA labels, navigazione keyboard, contrast ratio ottimali
 
-## System Architecture
+##  Architettura del Sistema
 
-### Technology Stack
+### Stack Tecnologico
 ```
 Frontend Framework: Vanilla TypeScript + DOM APIs
 CSS Framework: Tailwind CSS 4.1.11 (PostCSS Plugin)
 Build Tools: TypeScript Compiler + PostCSS
 Module System: ES2020 Modules
-Storage: Browser LocalStorage with versioning
+Storage: Browser LocalStorage con versioning
 ```
 
-### Project Structure
+### Struttura del Progetto
 ```
 worksphere-booking/
-├── src/                          # TypeScript source code
-│   ├── types/                    # Type definitions and interfaces
-│   │   └── index.ts             # Core application types
-│   ├── services/                 # Business logic and data layer
-│   │   └── bookingService.ts    # Booking management and storage
-│   ├── app.ts                   # Application layer and DOM management
+├── src/                          # Codice sorgente TypeScript
+│   ├── types/                    # Definizioni tipi e interfacce
+│   │   └── index.ts             # Types centrali dell'applicazione
+│   ├── services/                 # Business logic e data layer
+│   │   └── bookingService.ts    # Gestione prenotazioni e storage
+│   ├── app.ts                   # Application layer e DOM management
 │   └── input.css                # Tailwind CSS entry point
-├── dist/                        # Compiled output
-│   ├── types/                   # TypeScript declaration files
-│   ├── services/                # Compiled service layer
+├── dist/                        # Output compilato
+│   ├── types/                   # File dichiarazioni TypeScript
+│   ├── services/                # Service layer compilato
 │   ├── app.js                   # Main application
-│   └── output.css               # Tailwind-generated CSS
-├── index.html                   # Main page
-├── package.json                 # Project configuration and dependencies
-├── tsconfig.json                # Strict TypeScript configuration
-├── tailwind.config.js           # Custom Tailwind configuration
-└── postcss.config.js            # PostCSS configuration
+│   └── output.css               # CSS generato da Tailwind
+├── index.html                   # Pagina principale
+├── package.json                 # Configurazione progetto e dipendenze
+├── tsconfig.json               # Configurazione TypeScript strict
+├── tailwind.config.js          # Configurazione Tailwind personalizzata
+└── postcss.config.js           # Configurazione PostCSS
 ```
 
-## Installation & Setup
+##  Installazione e Setup
 
-### Prerequisites
+### Prerequisiti
 - **Node.js** >= 18.0.0
 - **npm** >= 9.0.0
-- Editor with TypeScript support (VS Code recommended)
+- Editor con supporto TypeScript (VS Code raccomandato)
 
-### Quick Installation
+### Installazione Rapida
 ```bash
-# Clone and enter the project
+# Clona e accedi al progetto
 git clone <repository-url>
 cd worksphere-booking
 
-# Install dependencies
+# Installa dipendenze
 npm install
 
-# Full project build
+# Build completo del progetto
 npm run build
 
-# Start development server
+# Avvia server di sviluppo
 npm start
 ```
 
-### Setup from Scratch
+### Setup da Zero
 ```bash
-# Create project directory
+# Crea directory progetto
 mkdir worksphere-booking && cd worksphere-booking
 
-# Initialize npm project
+# Inizializza progetto npm
 npm init -y
 
-# Install main dependencies
+# Installa dipendenze principali
 npm install --save-dev typescript@^5.8.3
 npm install --save-dev tailwindcss@^4.1.11 @tailwindcss/postcss@^4.1.11
 npm install --save-dev postcss@^8.5.6 postcss-cli@^11.0.0 autoprefixer@^10.4.21
 
-# Create directory structure
+# Crea struttura directory
 mkdir -p src/{types,services} dist
 
-# Copy configuration files from the repository
+# Copia file di configurazione dal repository
 # tsconfig.json, tailwind.config.js, postcss.config.js
 ```
 
-## Development Commands
+##  Comandi di Sviluppo
 
-### Build and Compile
+### Build e Compilazione
 ```bash
-npm run build          # Full build (TypeScript + CSS)
-npm run build:ts       # TypeScript compilation only  
-npm run build:css      # Tailwind CSS generation only
+npm run build          # Build completo (TypeScript + CSS)
+npm run build:ts       # Solo compilazione TypeScript  
+npm run build:css      # Solo generazione CSS Tailwind
 ```
 
-### Development Mode
+### Modalità Sviluppo
 ```bash
-npm run dev            # Watch mode for TS and CSS simultaneously
-npm run watch          # TypeScript watch mode only
-npm run watch:css      # CSS watch mode only
+npm run dev            # Watch mode per TS e CSS simultaneo
+npm run watch          # Solo TypeScript watch mode
+npm run watch:css      # Solo CSS watch mode
 ```
 
-### Utilities
+### Utilità
 ```bash
-npm run clean          # Clean dist/ directory
-npm run lint           # Type checking without compilation
-npm start              # Build + local static server
+npm run clean          # Pulisce directory dist/
+npm run lint           # Type checking senza compilazione
+npm start              # Build + server statico locale
 ```
 
-## 📋 Detailed Implementation
+## 📋 Implementazione Dettagliata
 
-### 1. TypeScript Type System
+### 1. Sistema di Tipi TypeScript
 
-#### Core Interfaces
+#### Interfacce Core
 ```typescript
 interface Room {
   id: number;
   name: string;
-  capacity?: number;        // Optional capacity for extensibility
-  amenities?: string[];     // Available amenities
+  capacity?: number;        // Capacità opzionale per estensibilità
+  amenities?: string[];     // Servizi disponibili
 }
 
 interface Booking {
-  id?: string;              // Automatically generated
+  id?: string;              // Generato automaticamente
   roomId: number;
-  date: string;             // Format: YYYY-MM-DD
-  time: string;             // Format: HH:MM
-  duration?: number;        // Duration in minutes (default: 60)
-  bookedBy?: string;        // Booking user
-  createdAt?: Date;         // Creation timestamp
+  date: string;             // Formato: YYYY-MM-DD
+  time: string;             // Formato: HH:MM
+  duration?: number;        // Durata in minuti (default: 60)
+  bookedBy?: string;        // Utente prenotazione
+  createdAt?: Date;         // Timestamp creazione
 }
 
 interface AppState {
@@ -154,7 +154,7 @@ interface AppState {
 }
 ```
 
-#### Enums for Type Safety
+#### Enums per Type Safety
 ```typescript
 enum MessageType {
   SUCCESS = 'success',
@@ -166,31 +166,31 @@ enum MessageType {
 enum TimeSlot {
   SLOT_09_00 = '09:00',
   SLOT_10_00 = '10:00',
-  // ... other time slots
+  // ... altri slot orari
 }
 ```
 
 ### 2. Service Layer Architecture
 
-#### Promise-Based Pattern
+#### Pattern Promise-Based
 ```typescript
 export const saveBooking = (booking: Booking): Promise<Booking> => {
   return new Promise((resolve, reject) => {
     try {
-      // Multi-level validation
+      // Validazione multi-livello
       const validation = validateBooking(booking);
       if (!validation.isValid) {
         reject(new Error(`Validation failed: ${validation.errors.join(', ')}`));
         return;
       }
 
-      // Availability check
+      // Controllo disponibilità
       if (!isSlotAvailable(booking.roomId, booking.date, booking.time)) {
         reject(new Error('Selected time slot is no longer available'));
         return;
       }
 
-      // Create booking with metadata
+      // Creazione booking con metadata
       const newBooking: Booking = {
         ...booking,
         id: generateBookingId(),
@@ -198,7 +198,7 @@ export const saveBooking = (booking: Booking): Promise<Booking> => {
         duration: booking.duration || 60
       };
 
-      // Persist to storage
+      // Persistenza storage
       const bookings = getBookings();
       bookings.push(newBooking);
       localStorage.setItem(BOOKINGS_KEY, JSON.stringify(bookings));
@@ -212,27 +212,27 @@ export const saveBooking = (booking: Booking): Promise<Booking> => {
 };
 ```
 
-#### Advanced Validation
+#### Validazione Avanzata
 ```typescript
 const validateBooking = (booking: Booking): BookingValidationResult => {
   const errors: string[] = [];
 
-  // Room ID validation
+  // Validazione Room ID
   if (!booking.roomId || booking.roomId <= 0) {
     errors.push('Room ID must be a positive number');
   }
 
-  // Date format validation
+  // Validazione formato data
   if (!booking.date || !/^\d{4}-\d{2}-\d{2}$/.test(booking.date)) {
     errors.push('Date must be in YYYY-MM-DD format');
   }
 
-  // Time format validation
+  // Validazione formato orario
   if (!booking.time || !/^\d{2}:\d{2}$/.test(booking.time)) {
     errors.push('Time must be in HH:MM format');
   }
 
-  // Past date check
+  // Controllo date passate
   const bookingDate = new Date(booking.date);
   const today = new Date();
   today.setHours(0, 0, 0, 0);
@@ -247,7 +247,7 @@ const validateBooking = (booking: Booking): BookingValidationResult => {
 
 ### 3. Application Layer Pattern
 
-#### Centralized State Management
+#### Gestione Stato Centralizzata
 ```typescript
 const appState: AppState = {
   rooms: [
@@ -262,7 +262,7 @@ const appState: AppState = {
 };
 ```
 
-#### Debouncing for Performance
+#### Debouncing per Performance
 ```typescript
 const debounce = <T extends (...args: any[]) => any>(
   func: T,
@@ -275,7 +275,7 @@ const debounce = <T extends (...args: any[]) => any>(
   };
 };
 
-// Usage: debounced availability updates at 300ms
+// Uso: aggiornamenti disponibilità debounced a 300ms
 const debouncedUpdate = debounce(updateAvailableTimeSlots, 300);
 ```
 
@@ -290,14 +290,14 @@ interface DOMElements {
 }
 
 const initializeDOMElements = (): boolean => {
-  // Type assertions with validation
+  // Type assertions con validazione
   elements = {
     roomSelect: document.getElementById("room") as HTMLSelectElement,
     dateInput: document.getElementById("date") as HTMLInputElement,
-    // ... other elements
+    // ... altri elementi
   };
 
-  // Validate element existence
+  // Validazione esistenza elementi
   const missingElements = Object.entries(elements)
     .filter(([, element]) => !element)
     .map(([key]) => key);
@@ -313,13 +313,13 @@ const initializeDOMElements = (): boolean => {
 // postcss.config.js
 module.exports = {
   plugins: {
-    '@tailwindcss/postcss': {}, // New Tailwind 4 plugin approach
+    '@tailwindcss/postcss': {}, // Nuovo approccio plugin Tailwind 4
     autoprefixer: {},
   },
 }
 ```
 
-#### Custom Configuration
+#### Configurazione Personalizzata
 ```javascript
 // tailwind.config.js
 module.exports = {
@@ -372,11 +372,11 @@ module.exports = {
 ">
 ```
 
-## Advanced Features
+## Funzionalità Avanzate
 
-### Systemic Error Handling
+### Error Handling Sistemico
 ```typescript
-// Custom error classification
+// Classificazione errori custom
 class ValidationError extends Error {
   constructor(message: string, public context?: any) {
     super(message);
@@ -394,11 +394,11 @@ class BookingConflictError extends Error {
 // Global error boundary
 window.addEventListener('error', (event) => {
   console.error('Global application error:', event.error);
-  showMessage('An unexpected error occurred', MessageType.ERROR);
+  showMessage('Si è verificato un errore imprevisto', MessageType.ERROR);
 });
 ```
 
-### Storage with Versioning
+### Storage con Versioning
 ```typescript
 const STORAGE_VERSION = '1.0';
 const VERSION_KEY = 'roomBookingsVersion';
@@ -407,7 +407,7 @@ const initializeStorage = (): void => {
   const currentVersion = localStorage.getItem(VERSION_KEY);
   
   if (currentVersion !== STORAGE_VERSION) {
-    // Data migration logic if necessary
+    // Logica migrazione dati se necessaria
     localStorage.setItem(VERSION_KEY, STORAGE_VERSION);
   }
 };
@@ -415,13 +415,13 @@ const initializeStorage = (): void => {
 
 ### Performance Monitoring
 ```typescript
-// Basic performance metrics
+// Metriche performance basic
 const performanceLogger = {
   startTime: performance.now(),
   
   logOperation: (operation: string, startTime: number) => {
     const duration = performance.now() - startTime;
-    if (duration > 100) { // Log operations > 100ms
+    if (duration > 100) { // Log operazioni > 100ms
       console.warn(`Slow operation: ${operation} took ${duration.toFixed(2)}ms`);
     }
   }
@@ -430,20 +430,20 @@ const performanceLogger = {
 
 ## UI/UX Features
 
-### Dynamic Messaging System
-- Success/error/warning/info messages with differentiated colors
-- Auto-hide after 5 seconds with slide-up animation
-- Context-aware error messages for better UX
+### Sistema Messaggi Dinamico
+- Messaggi success/error/warning/info con colori differenziati
+- Auto-hide dopo 5 secondi con animazione slide-up
+- Context-aware error messages per miglior UX
 
 ### Responsive Design Strategy
-- Mobile-first approach with `md:`, `lg:`, `xl:` breakpoints
-- Responsive typography scale
-- Touch-friendly interactions on mobile
+- Mobile-first approach con breakpoint `md:`, `lg:`, `xl:`
+- Typography scale responsiva
+- Touch-friendly interactions su mobile
 
 ### Accessibility Compliance
-- ARIA labels and semantic HTML
-- Focus management for keyboard navigation
-- Color contrast ratio > 4.5:1 for WCAG compliance
+- ARIA labels e semantic HTML
+- Focus management per navigazione keyboard
+- Color contrast ratio > 4.5:1 per WCAG compliance
 - Screen reader friendly error announcements
 
 ## Browser Support & Performance
@@ -452,7 +452,7 @@ const performanceLogger = {
 - **Chrome/Edge** >= 88 (ES2020 support)
 - **Firefox** >= 85
 - **Safari** >= 14
-- **Mobile browsers** with ES2020 support
+- **Mobile browsers** con supporto ES2020
 
 ### Performance Metrics
 - **First Contentful Paint** < 1.5s
@@ -462,7 +462,7 @@ const performanceLogger = {
 
 ## Testing Strategy
 
-### Testing Approach (Theory)
+### Approccio Testing (Teoria)
 ```typescript
 // Unit testing approach
 describe('BookingService', () => {
@@ -491,85 +491,85 @@ describe('Booking Flow', () => {
 ## Security Considerations
 
 ### Input Validation
-- User input sanitization to prevent XSS
-- Strict date/time format validation with regex
-- TypeScript type safety as first defense
+- Sanitizzazione input utente per prevenire XSS
+- Validazione formato date/time con regex strict
+- Type safety TypeScript come prima difesa
 
 ### Data Protection
 - localStorage isolation per origin
-- No sensitive data stored on client
-- Error messages do not expose internals
+- No sensitive data storage in client
+- Error messages che non espongono internals
 
 ## Deployment & Production
 
-### Production Build
+### Build per Produzione
 ```bash
 # Clean build
 npm run clean
 npm run build
 
-# Check output
+# Verifica output
 ls -la dist/
 du -h dist/*
 
-# Local production test
+# Test produzione locale
 npm start
 ```
 
-### Production Optimizations
-- Automatic CSS purging via Tailwind
-- Optimized TypeScript compilation
-- Source maps for debugging
+### Ottimizzazioni Produzione
+- CSS purging automatico via Tailwind
+- TypeScript compilation ottimizzata
+- Source maps per debugging
 - Minification via PostCSS
 
-## Future Roadmap
+## Roadmap Future
 
-### Planned Features
+### Features Pianificate
 - [ ] **Testing Suite**: Jest + Testing Library + Playwright E2E
-- [ ] **PWA Support**: Service workers, offline mode, installability
-- [ ] **Backend Integration**: REST API, authentication, multi-device sync
-- [ ] **Advanced Booking**: Recurring bookings, email notifications, calendar sync
+- [ ] **PWA Support**: Service workers, offline mode, installabilità
+- [ ] **Backend Integration**: REST API, autenticazione, sync multi-device
+- [ ] **Advanced Booking**: Ricorrenze, notifiche email, calendar sync
 - [ ] **Analytics**: Usage tracking, performance monitoring
-- [ ] **Internationalization**: Multi-language support
+- [ ] **Internazionalizzazione**: Multi-language support
 
-### Technical Improvements
+### Miglioramenti Tecnici
 - [ ] **Bundle Optimization**: Code splitting, lazy loading
-- [ ] **State Management**: Redux Toolkit for complex apps
-- [ ] **Real-time Updates**: WebSocket for live updates
+- [ ] **State Management**: Redux Toolkit per app complesse
+- [ ] **Real-time Updates**: WebSocket per aggiornamenti live
 - [ ] **Advanced Caching**: Service worker caching strategies
-- [ ] **Error Reporting**: Sentry integration for production monitoring
+- [ ] **Error Reporting**: Sentry integration per production monitoring
 
-## Contributing
+## Contribuzione
 
-### Development Setup
-1. Fork the repository
-2. Local clone: `git clone <your-fork-url>`
-3. Install dependencies: `npm install`
-4. Setup git hooks: `npm run prepare` (if available)
-5. Create feature branch: `git checkout -b feature/feature-name`
+### Setup Sviluppo
+1. Fork del repository
+2. Clone locale: `git clone <your-fork-url>`
+3. Install dipendenze: `npm install`
+4. Setup git hooks: `npm run prepare` (se disponibile)
+5. Crea feature branch: `git checkout -b feature/nome-feature`
 
-### Code Standards
-- **TypeScript strict mode** required
-- **Prettier** for code formatting
-- **ESLint** for code quality
-- **Conventional Commits** for git messages
-- **Comments in English** even for Italian codebase
+### Standards Codice
+- **TypeScript strict mode** obbligatorio
+- **Prettier** per code formatting
+- **ESLint** per code quality
+- **Conventional Commits** per messaggi git
+- **Commenti in inglese** anche per codebase italiana
 
 ### Pull Request Process
-1. Ensure build passes: `npm run build`
+1. Ensure build passa: `npm run build`
 2. Type checking: `npm run lint`
-3. Complete manual test
-4. Update documentation if needed
-5. Squash commits before merging
+3. Test manual completo
+4. Update documentation se necessario
+5. Squash commits prima del merge
 
 ## License & Credits
 
 **License**: MIT License
 
-**Developed by**: Francesco di Biase
-**Technologies**: TypeScript, Tailwind CSS 4, PostCSS
-**Support**: Complete documentation and community support
+**Sviluppato da**: Francesco di Biase
+**Tecnologie**: TypeScript, Tailwind CSS 4, PostCSS
+**Supporto**: Documentazione completa e community support
 
 ---
 
-*This project represents an example of best practices for modern TypeScript applications, focusing on type safety, performance, and user experience.*
+*Questo progetto rappresenta un esempio di best practices per applicazioni TypeScript moderne, con focus su type safety, performance e user experience.*
